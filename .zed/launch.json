@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "vulkan_compute",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/vulkan_compute",
+      "args": [],
+      "env": {
+        "MVK_CONFIG_DEBUG": "1",
+      },
+    },
+  ],
+}

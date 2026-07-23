@@ -1,0 +1,30 @@
+[
+  {
+    "file": "main.c",
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-O0",
+      "main.c",
+      "-I/usr/local/include/",
+      "-o",
+      "vulkan_compute"
+    ],
+    "directory": "/Users/lou/Dev/vulkan-compute",
+    "output": "vulkan_compute"
+  },
+  {
+    "file": "compute.c",
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-O0",
+      "compute.c",
+      "-I/usr/local/include/",
+      "-o",
+      "vulkan_compute"
+    ],
+    "directory": "/Users/lou/Dev/vulkan-compute",
+    "output": "vulkan_compute"
+  }
+]
