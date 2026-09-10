@@ -1,5 +1,6 @@
 #include "device.h"
 #include "instance.h"
+#include "log.h"
 
 VkDevice LogicalDevice = VK_NULL_HANDLE;
 VkQueue ComputingQueue = VK_NULL_HANDLE;
@@ -10,16 +11,23 @@ uint32_t computeQueueFamilyIndex;
 
 void CreateDeviceAndCommandQueue()
 {
-    VkQueueFamilyProperties families[100];
-    uint32_t count = 100;
+    
+    uint32_t count = 0;
 
     vkGetPhysicalDeviceQueueFamilyProperties(
     PhysicalDevice,
     &count,
-    families
+    NULL
+    );
+      Log("info","found %d queue families\n", count);
+
+    VkQueueFamilyProperties families[count];
+
+    vkGetPhysicalDeviceQueueFamilyProperties(
+        PhysicalDevice, &count, families
     );
 
-    printf("found %d queue families", count);
+  
 
     computeQueueFamilyIndex = 0;
 
@@ -28,7 +36,7 @@ void CreateDeviceAndCommandQueue()
     }
 
     if(computeQueueFamilyIndex == count) {
-        printf("compute queue not found");
+        Log("info","compute queue not found");
     }
 
     float priority = 1.0f;
@@ -47,7 +55,7 @@ void CreateDeviceAndCommandQueue()
     deviceCreateInfo.queueCreateInfoCount = 1;
 
     if(vkCreateDevice(PhysicalDevice, &deviceCreateInfo, NULL, &LogicalDevice) != VK_SUCCESS){
-        printf("failed to create logical device");
+        Log("info","failed to create logical device");
         return;
     }
 
@@ -61,7 +69,7 @@ void CreateCommandPool(){
     poolCreateInfo.queueFamilyIndex = computeQueueFamilyIndex;
 
     if(vkCreateCommandPool(LogicalDevice, &poolCreateInfo, NULL, &CommandPool) != VK_SUCCESS) {
-      printf("failed to create command pool");
+      Log("info","failed to create command pool");
       return;
     };
 }

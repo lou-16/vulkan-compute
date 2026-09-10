@@ -26,5 +26,33 @@
     ],
     "directory": "/Users/lou/Dev/vulkan-compute",
     "output": "vulkan_compute"
+  },
+  {
+    "file": "device.c",
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-O0",
+      "device.c",
+      "-I/usr/local/include/",
+      "-o",
+      "vulkan_compute"
+    ],
+    "directory": "/Users/lou/Dev/vulkan-compute",
+    "output": "vulkan_compute"
+  },
+  {
+    "file": "instance.c",
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-O0",
+      "instance.c",
+      "-I/usr/local/include/",
+      "-o",
+      "vulkan_compute"
+    ],
+    "directory": "/Users/lou/Dev/vulkan-compute",
+    "output": "vulkan_compute"
   }
 ]

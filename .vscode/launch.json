@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug Vulkan App",
+      "program": "${workspaceFolder}/vulkan_compute",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "build",
+      "env": {
+        "VK_LOADER_DEBUG": "error,warn",
+        "VK_ICD_FILENAMES": "/usr/local/share/vulkan/icd.d/MoltenVK_icd.json"
+      }
+    }
+  ]
+}

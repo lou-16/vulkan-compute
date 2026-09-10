@@ -20,5 +20,26 @@
                 }
             }
         ]
-    }
+    }, 
+    "editor.inlineSuggest.enabled": false,
+
+    "github.copilot.enable": {
+        "*": false,
+    }, 
+    "editor.suggest.showWords": true,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+
+    "editor.suggestSelection": "first",
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.acceptSuggestionOnCommitCharacter": true,
+    "clangd.arguments": [
+    "--background-index",
+    "-j=4",
+    "--compile-commands-dir=./"
+    ],
+    "C_Cpp.intelliSenseEngine": "disabled"
 }
